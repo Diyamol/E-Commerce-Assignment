@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Products>
+@{
+    ViewData["Title"] = "ModifyCancelItems";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ModifyCancelItems</h1>
+
+<div>
+    <input type="submit" class="btn-sub" style="float:right" value="Add New Item" onclick="location.href = '@Url.Action("AddItem","Admin")'" />
+    <table class="order-tbl">
+        <tr>
+            
+            <th class="th-border">Product Name</th>
+            <th class="th-border">Quantity</th>
+            <th class="th-border">Price</th>
+            <th class="th-border"></th>
+        </tr>
+        @foreach (var prod in Model)
+        {
+            <tr>
+                
+                <td class="th-border">@prod.productName</td>
+                <td class="th-border">@prod.quantity</td>
+                <td class="th-border">@prod.price</td>
+                <td class="th-border">
+                    <input type="submit" class="btn-sub" value="Modify" onclick="location.href = '@Url.Action("EditItem","Admin")?id=@prod.productId'" />
+                    <input type="submit" class="btn-sub" value="Remove" onclick="location.href = '@Url.Action("DeleteItem","Admin")?id=@prod.productId'" />
+                    
+                </td>
+            </tr>
+        }
+    </table>
+</div>

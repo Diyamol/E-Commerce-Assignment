@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewData["Title"] = "Checkout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Checkout</h1>
+
+<div>
+    <table class="sign-tbl">
+        <tr>
+            <td class="td-prod-det-img">
+                <a href="@Url.Action("Products", "Product")">
+                    <img src="~/images/ProductDet/thumb_asus_1.jpg" />
+                </a>
+            </td>
+            <td>
+                <span>
+                    <b>ASUS VivoBook</b><br />
+                    Price:	$650.00<br />
+                    
+                </span><br /><br />
+
+            </td>
+        </tr>
+        <tr>
+            <td class="td-prod-det-img">
+                <a href="@Url.Action("Products", "Product")">
+                    <img src="~/images/ProductDet/thumb_dell_1.jpg" />
+                </a>
+            </td>
+            <td>
+                <span>
+                    <b>Dell Inspiron</b><br />
+                    Price:	$409.00<br />
+                    
+                </span><br /><br />
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td>Subtotal </td>
+                        <td>: $1059.00</td>
+                    </tr>
+                    <tr>
+                        <td>Tax </td>
+                        <td>: $159.00</td>
+                    </tr>
+                    <tr>
+                        <td>Service Fee </td>
+                        <td>: $100.00</td>
+                    </tr>
+                    <tr>
+                        <td>Total </td>
+                        <td>: $1348.00</td>
+                    </tr>
+                </table>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" class="btn-sub" value="Proceed to Payment" onclick="location.href = '@Url.Action("Success","User")'" />
+            </td>
+        </tr>
+    </table>
+</div>

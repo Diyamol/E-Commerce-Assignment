@@ -1,0 +1,34 @@
+﻿@model IEnumerable<CSharpAssignment2.Models.Products>
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Home</h1>
+
+<div id="main-div">
+    <table>
+        <tr>
+           
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+    <tr>
+        @{
+            TempData["id"] = item.productId;
+        }
+            
+
+        <td><a href="@Url.Action("Products", "Product",new { id=item.productId})"><span><b>@Html.DisplayFor(modelItem => item.productName)</b></span></a>
+        
+        </td>
+        <td><span>@Html.DisplayFor(modelItem => item.productDescription)</span></td>
+        <td><span>@Html.DisplayFor(modelItem => item.price)</span></td>
+    </tr>
+        }
+
+    </table>
+</div>

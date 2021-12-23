@@ -1,0 +1,93 @@
+﻿@model Registration
+
+@{
+    ViewData["Title"] = "SignUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>SignUp</h1>
+
+<div>
+    <br />
+    <form asp-action="SignUp" method="post">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <table class="sign-tbl">
+            <tr class="form-group">
+                <td>
+                    <label asp-for="User.username" class="control-label"></label>
+                </td>
+                <td>
+                    <input asp-for="User.username" class="form-control" />
+                    <span asp-validation-for="User.username" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr class="form-group">
+                <td>
+                    <label asp-for="User.password" class="control-label"></label>
+                </td>
+                <td>
+                    <input asp-for="User.password" class="form-control" />
+                    <span asp-validation-for="User.password" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr class="form-group">
+                <td>
+                    <label asp-for="User.confirmPassword" class="control-label"></label>
+                </td>
+                <td>
+                    <input asp-for="User.confirmPassword" class="form-control" />
+                    <span asp-validation-for="User.confirmPassword" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr class="form-group">
+                <td>
+                    <label asp-for="address1" class="control-label"></label>
+                </td>
+                <td>
+                    <input asp-for="address1" class="form-control" />
+                    <span asp-validation-for="address1" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr class="form-group">
+                <td>
+                    <label asp-for="address2" class="control-label"></label>
+                </td>
+                <td>
+                    <input asp-for="address2" class="form-control" />
+                    <span asp-validation-for="address2" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr class="form-group">
+                <td>
+                    <label asp-for="postalCode" class="control-label"></label>
+                </td>
+                <td>
+                    <input asp-for="postalCode" class="form-control" />
+                    <span asp-validation-for="postalCode" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr class="form-group">
+                <td>
+                    <label asp-for="phoneNumber" class="control-label"></label>
+                </td>
+                <td>
+                    <input asp-for="phoneNumber" class="form-control" />
+                    <span asp-validation-for="phoneNumber" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr class="form-group">
+                <td>
+                    <input type="reset" class="btn-reset btn-sub" value="Clear" />
+                </td>
+                <td>
+                    <input type="submit" class="btn-sub" value="Register" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

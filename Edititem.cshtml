@@ -1,0 +1,56 @@
+﻿@model IEnumerable<CSharpAssignment2.Models.Products>
+
+@{
+    ViewData["Title"] = "Edititem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edititem</h1>
+
+<h4>Products</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edititem" method="post" asp-controller="Admin" enctype="multipart/form-data">
+            @foreach (var item in Model)
+            {
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="@item.productId" class="control-label"></label>
+                    <input asp-for="@item.productId" class="form-control" readonly="readonly" />
+                    <span asp-validation-for="@item.productId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@item.productName" class="control-label"></label>
+                    <input asp-for="@item.productName" class="form-control" />
+                    <span asp-validation-for="@item.productName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@item.productDescription" class="control-label"></label>
+                    <input asp-for="@item.productDescription" class="form-control" />
+                    <span asp-validation-for="@item.productDescription" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@item.price" class="control-label"></label>
+                    <input asp-for="@item.price" class="form-control" />
+                    <span asp-validation-for="@item.price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@item.quantity" class="control-label"></label>
+                    <input asp-for="@item.quantity" class="form-control" />
+                    <span asp-validation-for="@item.quantity" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            }
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

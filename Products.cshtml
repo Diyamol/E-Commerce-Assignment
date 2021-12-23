@@ -1,0 +1,49 @@
+﻿@model IEnumerable<CSharpAssignment2.Models.Products>
+@{
+    ViewData["Title"] = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <form method="post" asp-action="Cart" asp-controller="User" enctype="multipart/form-data">
+
+    </form>
+    <table>
+        @foreach( var item in Model)
+            {
+                 <tr>
+                    <td class="td-prod-det-img">
+                        <img src="~/images/ProductDet/thumb_asus_1.jpg" />
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="~/images/ProductDet/thumb_asus_1.jpg" />
+                                </td>
+                                <td>
+                                    <img src="~/images/ProductDet/thumb_asus_2.jpg" />
+                                </td>
+                                <td>
+                                    <img src="~/images/ProductDet/thumb_asus_3.jpg" />
+                                </td>
+                            </tr>                        </table>
+                    </td>
+                    <td>
+                        <form asp-action="Products" method="post" asp-controller="Product" enctype="multipart/form-data">
+                            <span>
+                                <input type="hidden" asp-for="@item.productId" />
+                                <b>@item.productName</b><br />
+                                @item.productDescription<br />
+                                Price: $<input asp-for="@item.price" class="form-control" readonly="readonly" /><br />
+                                Available quantity: @item.quantity<br />
+                                
+                            </span><br /><br />
+                            <input type="submit" class="btn-sub" name="buy" value="Buy Now" onclick="location.href = '@Url.Action("Checkout","User")?id=@item.productId'" />
+                            <input type="submit" class="btn-sub" name="tocart" value="Add to Cart" />
+                        </form>
+                    </td>
+                </tr>
+            }
+        
+    </table>
+</div>
+

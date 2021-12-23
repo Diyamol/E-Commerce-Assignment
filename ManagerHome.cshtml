@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Products>
+@{
+    ViewData["Title"] = "ManagerHome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ManagerHome</h1>
+
+<div>
+    <div class="sidebar-div">
+        <nav>
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-link" asp-area="" asp-controller="Admin" asp-action="ManagerHome">UnProcessed Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-link" asp-area="" asp-controller="Admin" asp-action="ModifyCancelItems">Items</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="right-div">
+        <table class="sign-tbl">
+            <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+            
+            @foreach (var prod in Model)
+            {
+        <tr>
+            <td>
+                <span>
+                    <b>@prod.productName</b><br />
+                 </span>  
+            </td>
+            <td>
+                <span>
+                    @prod.price
+                </span>
+            </td>
+            <td>
+                <span>
+                    @prod.quantity
+                </span>
+            </td>
+
+        </tr>
+
+
+
+            }
+            
+        </table>
+    </div>
+
+</div>
