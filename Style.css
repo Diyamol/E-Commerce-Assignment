@@ -1,0 +1,59 @@
+﻿.bg-white {
+    background-color: #19037e!important;
+}
+.text-dark {
+    color:white!important;
+}
+.main-text {
+    color:white!important;
+}
+table {
+    margin-left:auto;
+    margin-right:auto;
+}
+.td-prod-img {
+    padding-left:5px;
+    padding-right:5px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.td-prod-det-img {
+    padding-left: 5px;
+    padding-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.btn-sub {
+    background-color:darkblue;
+    color:white;
+}
+.sign-tbl {
+    float:left!important;
+}
+.btn-reset {
+    float:right;
+}
+.sidebar-div {
+    float:left;
+    width:20%;
+}
+.right-div {
+    float: right;
+    width: 70%;
+}
+.text-link {
+    color:black;
+}
+.success-div {
+    color:green;
+    text-align:center;
+    font-size:xx-large;
+}
+.order-tbl {
+    border:1px solid black ;
+    border-collapse:collapse;
+
+}
+.th-border {
+    border: 1px solid black;
+}
